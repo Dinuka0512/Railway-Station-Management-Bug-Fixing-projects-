@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="542.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.gdse.railway_management.railway_management_system.controller.promotionController">
+   <children>
+      <ImageView fitHeight="553.0" fitWidth="698.0" layoutY="-5.0">
+         <image>
+            <Image url="@../images/rt.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtPromotionId" layoutX="54.0" layoutY="49.0" promptText="Promotion Id" />
+      <TextField fx:id="txtPromotionName" layoutX="263.0" layoutY="49.0" promptText="Promotion Name" />
+      <TextArea fx:id="txtDescription" layoutX="100.0" layoutY="138.0" prefHeight="90.0" prefWidth="476.0" promptText="description">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextArea>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="203.0" layoutY="7.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #ffffff;" text="Promotions">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="440.0" layoutY="246.0" mnemonicParsing="false" onAction="#updatePromotionOnAction" style="-fx-background-color: #00a6ff;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="359.0" layoutY="246.0" mnemonicParsing="false" onAction="#savePromotionOnAction" prefHeight="26.0" prefWidth="55.0" style="-fx-background-color: #00a6ff;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="522.0" layoutY="246.0" mnemonicParsing="false" onAction="#deletePromotionOnAction" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: #f70000;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtBookingId" layoutX="471.0" layoutY="48.0" prefHeight="26.0" prefWidth="150.0" promptText="Booking id" />
+      <TableView fx:id="promotionTable" layoutX="28.0" layoutY="293.0" prefHeight="232.0" prefWidth="642.0">
+        <columns>
+          <TableColumn fx:id="colPrId" prefWidth="82.39999771118164" text="promotion Id" />
+          <TableColumn fx:id="colPrName" prefWidth="79.19998168945312" text="Pr name" />
+            <TableColumn fx:id="colStart" prefWidth="78.40000915527344" text="start" />
+            <TableColumn fx:id="colEnd" prefWidth="72.79998779296875" text="End" />
+            <TableColumn fx:id="colBId" prefWidth="96.0" text="booking Id" />
+            <TableColumn fx:id="colDescription" prefWidth="232.0" text="Description" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="startDate" layoutX="137.0" layoutY="97.0" promptText="Start date" />
+      <DatePicker fx:id="endDate" layoutX="358.0" layoutY="97.0" promptText="End date" />
+   </children>
+</AnchorPane>

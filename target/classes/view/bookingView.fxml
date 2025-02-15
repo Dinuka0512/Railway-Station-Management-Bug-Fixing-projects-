@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="content" prefHeight="535.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.gdse.railway_management.railway_management_system.controller.bookingController">
+   <children>
+      <ImageView fitHeight="549.0" fitWidth="700.0" layoutY="-3.0">
+         <image>
+            <Image url="@../images/rt.jpg" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cmbPassenger" layoutX="173.0" layoutY="187.0" prefHeight="26.0" prefWidth="175.0" promptText="No. of passengers" visibleRowCount="5" />
+      <Button fx:id="btnBook" layoutX="382.0" layoutY="421.0" mnemonicParsing="false" onAction="#bookOnaction" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #2c66bf;" text="Book" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnReset" layoutX="471.0" layoutY="421.0" mnemonicParsing="false" onAction="#resetOnAction" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #2c66bf;" text="Reset" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="dpBookingDate" layoutX="431.0" layoutY="187.0" prefHeight="26.0" prefWidth="175.0" promptText="B Date" />
+      <TextField fx:id="txtBookingID" layoutX="173.0" layoutY="104.0" prefHeight="27.0" prefWidth="175.0" promptText="Booking ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="92.0" layoutY="261.0" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #ffffff;" text="From">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="371.0" layoutY="261.0" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #ffffff;" text="To">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUserID" layoutX="431.0" layoutY="104.0" prefHeight="27.0" prefWidth="175.0" promptText="User ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtTotalFare" layoutX="85.0" layoutY="336.0" prefHeight="27.0" prefWidth="175.0" promptText="Total fare (price)">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="276.0" layoutY="14.0" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #ffffff;" text="Booking">
+         <font>
+            <Font name="Times New Roman Bold" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtStatus" layoutX="488.0" layoutY="336.0" prefHeight="26.0" prefWidth="175.0" promptText="Status">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="txtTrainID" layoutX="297.0" layoutY="337.0" prefWidth="150.0" promptText="train id" />
+      <ComboBox fx:id="cmbFrom" layoutX="173.0" layoutY="261.0" prefHeight="26.0" prefWidth="175.0" promptText="panadura" visibleRowCount="5" />
+      <ComboBox fx:id="cmbTo" layoutX="448.0" layoutY="261.0" prefHeight="26.0" prefWidth="175.0" promptText="jaffna" visibleRowCount="5" />
+      <Hyperlink fx:id="btnNext" alignment="CENTER" contentDisplay="CENTER" layoutX="564.0" layoutY="421.0" onAction="#navigateToPayment" prefHeight="27.0" prefWidth="79.0" style="-fx-background-color: #2c66bf;" text="Next" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>

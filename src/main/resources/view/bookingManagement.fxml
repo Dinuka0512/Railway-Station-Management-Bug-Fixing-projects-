@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="542.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.gdse.railway_management.railway_management_system.controller.bookingManageController">
+   <children>
+      <ImageView fitHeight="542.0" fitWidth="698.0">
+         <image>
+            <Image url="@../images/train%20in%209%20arch%20bridge.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblBookings" layoutX="15.0" layoutY="290.0" prefHeight="237.0" prefWidth="666.0">
+        <columns>
+          <TableColumn fx:id="colBookingID" prefWidth="68.80005168914795" text="booking Id" />
+          <TableColumn fx:id="colBookingDate" prefWidth="80.800048828125" text="booking date" />
+            <TableColumn fx:id="colUserID" prefWidth="58.4000244140625" text="User Id" />
+            <TableColumn fx:id="colTotalFare" prefWidth="75.99992370605469" text="total fare" />
+            <TableColumn fx:id="colStatus" prefWidth="69.5999755859375" text="Status" />
+            <TableColumn fx:id="colTrainID" prefWidth="56.0" text="Tr_Id" />
+            <TableColumn fx:id="colFrom" prefWidth="84.00006103515625" text="From" />
+            <TableColumn fx:id="colTo" prefWidth="76.79995727539062" text="To" />
+            <TableColumn fx:id="colNoPasseng" prefWidth="91.20001220703125" text="No.passengers" />
+        </columns>
+      </TableView>
+      <Button layoutX="389.0" layoutY="234.0" mnemonicParsing="false" onAction="#saveBookingOnAction" style="-fx-background-color: #00a6ff;" text="save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button layoutX="456.0" layoutY="234.0" mnemonicParsing="false" onAction="#updateONAction" style="-fx-background-color: #00a6ff;" text="update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button layoutX="533.0" layoutY="234.0" mnemonicParsing="false" onAction="#deleteOnAction" style="-fx-background-color: #f70000;" text="delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Label layoutX="225.0" layoutY="14.0" style="-fx-background-color: #ffffff;" text="Manage Bookings">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtBookingID" layoutX="40.0" layoutY="75.0" promptText="Booking Id">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="245.0" layoutY="75.0" promptText="Booking Date">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtUserID" layoutX="446.0" layoutY="75.0" promptText="User Id">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtTotalFare" layoutX="40.0" layoutY="125.0" promptText="Total Fare">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtStatus" layoutX="245.0" layoutY="125.0" promptText="Status">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtTrainID" layoutX="446.0" layoutY="125.0" promptText="Train Id">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtFrom" layoutX="40.0" layoutY="181.0" promptText="From">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtTo" layoutX="245.0" layoutY="181.0" promptText="TO">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPassengers" layoutX="446.0" layoutY="181.0" promptText="No.Of Passengers">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

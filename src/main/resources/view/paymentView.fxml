@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="542.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.gdse.railway_management.railway_management_system.controller.paymentController">
+   <children>
+      <ImageView fitHeight="542.0" fitWidth="704.0">
+         <image>
+            <Image url="@../images/train%20coming%20in.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="435.0" layoutY="461.0" mnemonicParsing="false" onAction="#confirmPayment" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #2c66bf;" text="Confirm" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="paymentId" layoutX="104.0" layoutY="74.0" prefHeight="26.0" prefWidth="196.0" promptText="Payment Id">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="amount" layoutX="111.0" layoutY="138.0" prefHeight="26.0" prefWidth="196.0" promptText="Amount">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <DatePicker fx:id="paymentDate" layoutX="386.0" layoutY="139.0" promptText="Payment Date" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="234.0" layoutY="14.0" text="Payment Information">
+         <font>
+            <Font name="Times New Roman Bold" size="25.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="pMethod" layoutX="378.0" layoutY="74.0" prefHeight="26.0" prefWidth="175.0" promptText="Method" visibleRowCount="2" />
+      <TableView fx:id="paymentTable" layoutX="35.0" layoutY="202.0" prefHeight="237.0" prefWidth="642.0">
+        <columns>
+          <TableColumn fx:id="colPaymentId" prefWidth="140.00000762939453" text="Payment Id" />
+          <TableColumn fx:id="colAmount" prefWidth="161.5999755859375" text="Amount" />
+            <TableColumn fx:id="colMethod" prefWidth="168.00006103515625" text="Method" />
+            <TableColumn fx:id="colDate" prefWidth="169.60000610351562" text="Payment Date" />
+        </columns>
+      </TableView>
+      <Hyperlink alignment="CENTER" contentDisplay="CENTER" layoutX="311.0" layoutY="461.0" onAction="#backToMain" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #2c66bf;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Hyperlink>
+      <Button layoutX="553.0" layoutY="461.0" mnemonicParsing="false" onAction="#openSendMailModel" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #2f21d1;" text="Send Mail" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
