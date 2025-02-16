@@ -16,4 +16,15 @@ public class UserBoimpl implements UserBo {
         User user = userDAO.getUserDetails(email);
         return (user != null)? new UserDto(user.getU_id(), user.getName(), user.getContact_no(), user.getGmail(), user.getPassword()) : null;
     }
+
+    @Override
+    public String genarateUserId() throws SQLException, ClassNotFoundException {
+        return userDAO.generateNewId();
+    }
+
+    @Override
+    public boolean saveUser(UserDto dto) throws SQLException, ClassNotFoundException {
+        return userDAO.save(new User(dto.getU_id(), dto.getName(), dto.getContact_no(), dto.getGmail(), dto.getPassword()));
+    }
+
 }

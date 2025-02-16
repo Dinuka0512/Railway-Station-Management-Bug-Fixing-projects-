@@ -7,4 +7,6 @@ import java.sql.SQLException;
 
 public interface UserBo extends SuperBo {
     UserDto getUserDetails(String email) throws SQLException, ClassNotFoundException;
+    String genarateUserId() throws SQLException, ClassNotFoundException;
+    boolean saveUser(UserDto dto) throws SQLException, ClassNotFoundException;
 }
