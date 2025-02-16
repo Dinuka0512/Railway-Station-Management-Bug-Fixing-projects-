@@ -14,7 +14,7 @@
       <VBox layoutX="-1.0" prefHeight="543.0" prefWidth="158.0" style="-fx-background-color: #44b6dc;" />
       <AnchorPane fx:id="content" layoutX="155.0" prefHeight="543.0" prefWidth="689.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="530.0" layoutY="33.0" mnemonicParsing="false" onAction="#navigateToRegisterUser" prefHeight="37.0" prefWidth="126.0" style="-fx-background-color: #006e2e;" text="Register a User" textFill="WHITE">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="530.0" layoutY="33.0" mnemonicParsing="false" onAction="#navigateToRegisterUser" prefHeight="37.0" prefWidth="126.0" style="-fx-background-color: #006e2e;" text="Add New User" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
