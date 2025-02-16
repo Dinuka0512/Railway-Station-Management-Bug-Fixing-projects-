@@ -3,7 +3,6 @@ package com.ijse.gdse.railway_management.railway_management_system.controller;
 import com.ijse.gdse.railway_management.railway_management_system.bo.BOFactory;
 import com.ijse.gdse.railway_management.railway_management_system.bo.custom.UserBo;
 import com.ijse.gdse.railway_management.railway_management_system.dto.UserDto;
-import com.ijse.gdse.railway_management.railway_management_system.entity.User;
 import com.ijse.gdse.railway_management.railway_management_system.util.validation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +14,6 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.concurrent.ExecutionException;
 
 public class registerUserController implements Initializable {
     @FXML

@@ -8,9 +8,7 @@ import lombok.*;
 @Getter
 @ToString
 public class PaymentDto {
-    private String p_Id;
-    private double amount;
-    private String booking_Id;
+    private String payment_Id;
     private String date;
-    private String pt_Id;
+    private double amount;
 }

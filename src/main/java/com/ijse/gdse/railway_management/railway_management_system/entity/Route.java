@@ -8,9 +8,9 @@ import lombok.*;
 @Getter
 @ToString
 public class Route {
-    private String r_Id;
-    private String start_Station;
-    private String end_Station;
+    private String route_Id;
+    private String start_Location;
+    private String end_Location;
     private double distance;
-    private String train_id;
+    private String train_Id;
 }

@@ -8,6 +8,7 @@ import lombok.*;
 @Getter
 @ToString
 public class payment_type {
-    private String pt_Id;
+    private String pay_tId;
     private String type;
+    private String payment_Id;
 }

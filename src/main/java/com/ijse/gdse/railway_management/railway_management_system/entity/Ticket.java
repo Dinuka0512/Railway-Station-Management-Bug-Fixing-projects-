@@ -8,8 +8,8 @@ import lombok.*;
 @Getter
 @ToString
 public class Ticket {
-    private String t_id;
-    private String Issue_date;
+    private String ticket_Id;
+    private String issue_Date;
     private String booking_Id;
-    private String price;
+    private double price;
 }

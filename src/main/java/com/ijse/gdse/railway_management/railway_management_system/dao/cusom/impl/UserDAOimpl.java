@@ -11,10 +11,10 @@ import java.util.ArrayList;
 public class UserDAOimpl implements UserDAO {
     @Override
     public String generateNewId() throws SQLException, ClassNotFoundException {
-        String sql = "SELECT u_id FROM user ORDER BY u_id DESC LIMIT 1";
+        String sql = "SELECT user_Id FROM user ORDER BY user_Id DESC LIMIT 1";
         ResultSet res = crudUtil.execute(sql);
         if (res.next()) {
-            String lastId = res.getString("u_id");
+            String lastId = res.getString("user_Id");
             String subString = lastId.substring(1);
 
             int i = Integer.parseInt(subString);
@@ -29,14 +29,14 @@ public class UserDAOimpl implements UserDAO {
 
     @Override
     public User getUserDetails(String email) throws SQLException, ClassNotFoundException {
-        String sql = "select * from user where gmail = ?";
+        String sql = "select * from user where email = ?";
         ResultSet res =  crudUtil.execute(sql, email);
         if(res.next()){
             return new User(
-                    res.getString("u_id"),
+                    res.getString("user_Id"),
                     res.getString("name"),
-                    res.getString("contact_no"),
-                    res.getString("gmail"),
+                    res.getString("email"),
+                    res.getString("contact"),
                     res.getString("password")
             );
         }
@@ -46,7 +46,7 @@ public class UserDAOimpl implements UserDAO {
     @Override
     public boolean save(User dto) throws SQLException, ClassNotFoundException {
         String query = "INSERT INTO user VALUES (?, ?, ?, ?, ?)";
-        return crudUtil.execute(query, dto.getU_id(), dto.getName(), dto.getContact_no(), dto.getGmail(), dto.getPassword());
+        return crudUtil.execute(query, dto.getUser_Id(), dto.getName(), dto.getEmail(), dto.getContact(), dto.getPassword());
     }
 
     @Override

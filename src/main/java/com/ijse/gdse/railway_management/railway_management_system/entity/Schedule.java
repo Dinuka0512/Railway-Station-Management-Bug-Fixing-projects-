@@ -8,11 +8,7 @@ import lombok.*;
 @Getter
 @ToString
 public class Schedule {
-    private String s_id;
-    private String arrival_time;
-    private String start_point;
-    private String departure_time;
-    private String destinatiom;
-    private String travel_date;
-    private String train_id;
+    private String schedule_Id;
+    private String date;
+    private String train_Id;
 }

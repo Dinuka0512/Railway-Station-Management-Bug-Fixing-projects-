@@ -8,8 +8,8 @@ import lombok.*;
 @Getter
 @ToString
 public class PassengerDto {
-    private String pa_id;
-    private String pa_name;
-    private String booking_Id;
-    private String seat_No;
+    private String passenger_Id;
+    private String name;
+    private String email;
+    private String contact;
 }

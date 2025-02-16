@@ -1,131 +1,82 @@
-CREATE DATABASE railway_management;
-USE railway_management;
+CREATE DATABASE railway;
+use railway;
+
+CREATE TABLE class (
+  class_Id VARCHAR(10) PRIMARY KEY,
+  name VARCHAR(30),
+  price DECIMAL(10,2)
+);
 
 CREATE TABLE train (
-  tr_id VARCHAR(10) PRIMARY KEY,
-  tr_name VARCHAR(30),
+  train_Id VARCHAR(10) PRIMARY KEY,
+  name VARCHAR(30),
   type VARCHAR(30)
 );
 
-CREATE TABLE passenger (
-  pa_id VARCHAR(20) PRIMARY KEY,
-  pa_name VARCHAR(30),
-  booking_id VARCHAR(10),
-  seat_no VARCHAR(30)
+CREATE TABLE routes (
+  route_Id VARCHAR(10) PRIMARY KEY,
+  start_Location VARCHAR(30),
+  end_Location VARCHAR(30),
+  distance DECIMAL(8,2),
+  train_Id VARCHAR(10) NOT NULL,
+  FOREIGN KEY (train_Id) REFERENCES train(train_Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+CREATE TABLE schedule (
+  schedule_Id VARCHAR(10) PRIMARY KEY,
+  date DATE,
+  train_Id VARCHAR(10) NOT NULL,
+  FOREIGN KEY (train_Id) REFERENCES train(train_Id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE user (
-  u_id VARCHAR(10) PRIMARY KEY,
+  user_Id VARCHAR(10) PRIMARY KEY,
   name VARCHAR(30),
-  contact_no VARCHAR(15),
-  gmail VARCHAR(50),
+  email VARCHAR(50) NOT NULL,
+  contact VARCHAR(15),
   password VARCHAR(255) NOT NULL
 );
 
-INSERT INTO user VALUES
-('U001', 'Admin', 'XXXXXXXXX', 'admin@gmail.com', 'admin'),
-('U002', 'akila', '0715867457', 'akila@gmail.com', '1111');
-
-CREATE TABLE booking (
-  b_id VARCHAR(10) PRIMARY KEY,
-  b_date DATE,
-  tr_id VARCHAR(10) NOT NULL,
-  from_station VARCHAR(30),
-  to_station VARCHAR(30),
-  pa_id VARCHAR(10) NOT NULL,
-  total_fare DECIMAL(10,2),
-  status VARCHAR(30),
-  FOREIGN KEY (pa_id) REFERENCES passenger(pa_id) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (tr_id) REFERENCES train(tr_id) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE passenger (
+  passenger_Id VARCHAR(10) PRIMARY KEY,
+  name VARCHAR(30),
+  email VARCHAR(50) NOT NULL,
+  contact VARCHAR(15)
 );
-
-ALTER TABLE passenger ADD CONSTRAINT fk_passenger_booking
-  FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE;
-
-CREATE TABLE payment_Type(
-  pt_Id VARCHAR(255) PRIMARY KEY,
-  type VARCHAR(255)
-);
-
-INSERT INTO payment_Type VALUES
-('pt001', 'Cash'),
-('pt002', 'Card'),
-('pt003', 'Paypal');
 
 CREATE TABLE payment (
-  p_id VARCHAR(10) PRIMARY KEY,
-  amount DECIMAL(10,2),
-  booking_id VARCHAR(10) NOT NULL,
+  payment_Id VARCHAR(10) PRIMARY KEY,
   date DATE,
-  pt_Id VARCHAR(255),
-  FOREIGN KEY (pt_Id) REFERENCES payment_Type(pt_Id) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE
+  amount DECIMAL(10,2)
+);
+
+CREATE TABLE payment_type (
+  pay_tId VARCHAR(10) PRIMARY KEY,
+  type VARCHAR(30),
+  payment_Id VARCHAR(10),
+  FOREIGN KEY (payment_Id) REFERENCES payment(payment_Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE bookings (
+  booking_Id VARCHAR(10) PRIMARY KEY,
+  date DATE,
+  schedule_Id VARCHAR(10),
+  from_station VARCHAR(30),
+  to_station VARCHAR(30),
+  pay_Id VARCHAR(10),
+  class_Id VARCHAR(10),
+  amount DECIMAL(10,2),
+  ticket_count INT,
+  FOREIGN KEY (schedule_Id) REFERENCES schedule(schedule_Id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (pay_Id) REFERENCES payment(payment_Id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (class_Id) REFERENCES class(class_Id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE ticket (
-  t_id VARCHAR(10) PRIMARY KEY,
-  issue_date DATE,
-  booking_id VARCHAR(10) NOT NULL,
+  ticket_Id VARCHAR(10) PRIMARY KEY,
+  issue_Date DATE,
+  booking_Id VARCHAR(10),
   price DECIMAL(8,2),
-  FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE pnr (
-  pnr_number VARCHAR(10) PRIMARY KEY,
-  status VARCHAR(30),
-  booking_id VARCHAR(10) NOT NULL,
-  FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE route (
-  r_id VARCHAR(10) PRIMARY KEY,
-  start_station VARCHAR(30),
-  end_station VARCHAR(30),
-  distance DECIMAL(8,2),
-  train_id VARCHAR(10) NOT NULL,
-  FOREIGN KEY (train_id) REFERENCES train(tr_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE class (
-  c_id VARCHAR(10) PRIMARY KEY,
-  c_name VARCHAR(30),
-  description VARCHAR(50),
-  train_id VARCHAR(10) NOT NULL,
-  FOREIGN KEY (train_id) REFERENCES train(tr_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE schedule (
-  s_id VARCHAR(10) PRIMARY KEY,
-  arrival_time TIME,
-  start_point VARCHAR(30),
-  departure_time TIME,
-  destination VARCHAR(30),
-  travel_date DATE,
-  train_id VARCHAR(10) NOT NULL,
-  FOREIGN KEY (train_id) REFERENCES train(tr_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE station (
-  st_id VARCHAR(10) PRIMARY KEY,
-  st_name VARCHAR(30),
-  location VARCHAR(30),
-  route_id VARCHAR(10) NOT NULL,
-  FOREIGN KEY (route_id) REFERENCES route(r_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE seat (
-  seat_id VARCHAR(10) PRIMARY KEY,
-  seat_no VARCHAR(30),
-  class_id VARCHAR(10) NOT NULL,
-  FOREIGN KEY (class_id) REFERENCES class(c_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE promotion (
-  pr_id VARCHAR(10) PRIMARY KEY,
-  pr_name VARCHAR(50),
-  start_date DATE,
-  end_date DATE,
-  booking_id VARCHAR(10) NOT NULL,
-  description VARCHAR(50),
-  FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (booking_Id) REFERENCES bookings(booking_Id) ON DELETE CASCADE ON UPDATE CASCADE
 );

@@ -8,12 +8,13 @@ import lombok.*;
 @Getter
 @ToString
 public class BookingDto {
-    private String b_Id;
-    private String b_date;
-    private String tr_id;
+    private String booking_Id;
+    private String date;
+    private String schedule_Id;
     private String from_station;
     private String to_station;
-    private String user_Id;
-    private double total_fare;
-    private String status;
+    private String pay_Id;
+    private String class_Id;
+    private double amount;
+    private int ticket_count;
 }

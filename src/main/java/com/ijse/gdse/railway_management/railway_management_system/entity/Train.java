@@ -8,7 +8,7 @@ import lombok.*;
 @Getter
 @ToString
 public class Train {
-    private String tr_id;
-    private String tr_name;
+    private String train_Id;
+    private String name;
     private String type;
 }

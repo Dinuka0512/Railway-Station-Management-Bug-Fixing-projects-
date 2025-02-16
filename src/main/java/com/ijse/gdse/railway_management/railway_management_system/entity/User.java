@@ -7,9 +7,9 @@ import lombok.*;
 @Getter
 @ToString
 public class User {
-    private  String u_id;
-    private  String name;
-    private String contact_no;
-    private String gmail;
+    private String user_Id;
+    private String name;
+    private String email;
+    private String contact;
     private String password;
 }
