@@ -7,13 +7,24 @@ CREATE TABLE train (
   type VARCHAR(30)
 );
 
+CREATE TABLE passenger (
+  pa_id VARCHAR(20) PRIMARY KEY,
+  pa_name VARCHAR(30),
+  booking_id VARCHAR(10),
+  seat_no VARCHAR(30)
+);
+
 CREATE TABLE user (
   u_id VARCHAR(10) PRIMARY KEY,
   name VARCHAR(30),
   contact_no VARCHAR(15),
   gmail VARCHAR(50),
-  password VARCHAR(255) NOT NULL;
+  password VARCHAR(255) NOT NULL
 );
+
+INSERT INTO user VALUES
+('U001', 'Admin', 'XXXXXXXXX', 'admin@gmail.com', 'admin'),
+('U002', 'akila', '0715867457', 'akila@gmail.com', '1111');
 
 CREATE TABLE booking (
   b_id VARCHAR(10) PRIMARY KEY,
@@ -21,34 +32,32 @@ CREATE TABLE booking (
   tr_id VARCHAR(10) NOT NULL,
   from_station VARCHAR(30),
   to_station VARCHAR(30),
-  user_id VARCHAR(10) NOT NULL,
+  pa_id VARCHAR(10) NOT NULL,
   total_fare DECIMAL(10,2),
   status VARCHAR(30),
-  FOREIGN KEY (user_id) REFERENCES user(u_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (pa_id) REFERENCES passenger(pa_id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (tr_id) REFERENCES train(tr_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE passenger (
-  pa_id VARCHAR(20) PRIMARY KEY,
-  pa_name VARCHAR(30),
-  booking_id VARCHAR(10) NOT NULL,
-  seat_no VARCHAR(30),
-  FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE
+ALTER TABLE passenger ADD CONSTRAINT fk_passenger_booking
+  FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE payment_Type(
+  pt_Id VARCHAR(255) PRIMARY KEY,
+  type VARCHAR(255)
 );
 
-
-create table payment_Type(
-    pt_Id varchar (255) primary key,
-    type varchar (255)
-);
-
+INSERT INTO payment_Type VALUES
+('pt001', 'Cash'),
+('pt002', 'Card'),
+('pt003', 'Paypal');
 
 CREATE TABLE payment (
   p_id VARCHAR(10) PRIMARY KEY,
   amount DECIMAL(10,2),
   booking_id VARCHAR(10) NOT NULL,
   date DATE,
-  pt_Id varchar(255),
+  pt_Id VARCHAR(255),
   FOREIGN KEY (pt_Id) REFERENCES payment_Type(pt_Id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -119,11 +128,4 @@ CREATE TABLE promotion (
   booking_id VARCHAR(10) NOT NULL,
   description VARCHAR(50),
   FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE admin (
-  username VARCHAR(20) PRIMARY KEY,
-  password VARCHAR(30),
-  contact_no VARCHAR(15),
-  gmail VARCHAR(50)
 );
