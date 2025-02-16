@@ -15,7 +15,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class registerUserController implements Initializable {
+public class RegisterUserController implements Initializable {
     @FXML
     private TextField txtContact;
 

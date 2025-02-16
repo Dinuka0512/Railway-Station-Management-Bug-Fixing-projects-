@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="body" prefHeight="543.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.gdse.railway_management.railway_management_system.controller.mainviewContoller">
+<AnchorPane fx:id="body" prefHeight="543.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.gdse.railway_management.railway_management_system.controller.MainviewContoller">
    <children>
-      <VBox layoutX="-1.0" prefHeight="543.0" prefWidth="150.0" style="-fx-background-color: #44b6dc;" />
-      <AnchorPane fx:id="content" layoutX="146.0" prefHeight="543.0" prefWidth="698.0" />
+      <VBox layoutX="-1.0" prefHeight="543.0" prefWidth="158.0" style="-fx-background-color: #44b6dc;" />
+      <AnchorPane fx:id="content" layoutX="155.0" prefHeight="543.0" prefWidth="689.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="530.0" layoutY="33.0" mnemonicParsing="false" onAction="#navigateToRegisterUser" prefHeight="37.0" prefWidth="126.0" style="-fx-background-color: #006e2e;" text="Register a User" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
       <Button alignment="CENTER" layoutX="11.0" layoutY="342.0" mnemonicParsing="false" onAction="#navigateToPromotion" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #ffffff;" text="Promotions">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="11.0" layoutY="226.0" mnemonicParsing="false" onAction="#navigateToBookingManagement" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #ffffff;" text="Manage Bookings">
+      <Button alignment="CENTER" layoutX="11.0" layoutY="223.0" mnemonicParsing="false" onAction="#navigateToBookingManagement" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #ffffff;" text="Manage Bookings">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -44,7 +55,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="36.0" mnemonicParsing="false" onAction="#navigateToRegisterUser" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #ffffff;" text="Register a User">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="36.0" mnemonicParsing="false" onAction="#managePassenger" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #ffffff;" text="Manage passenger">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

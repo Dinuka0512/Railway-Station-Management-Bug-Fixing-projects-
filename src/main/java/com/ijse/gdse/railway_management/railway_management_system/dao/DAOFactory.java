@@ -1,5 +1,6 @@
 package com.ijse.gdse.railway_management.railway_management_system.dao;
 
+import com.ijse.gdse.railway_management.railway_management_system.dao.cusom.impl.PassengerDAOimpl;
 import com.ijse.gdse.railway_management.railway_management_system.dao.cusom.impl.UserDAOimpl;
 
 public class DAOFactory {
@@ -14,13 +15,16 @@ public class DAOFactory {
     }
 
     public enum DAOType{
-        USER
+        USER,PASSENGER
     }
 
     public SuperDAO getDAO(DAOType type){
         switch (type){
             case USER -> {
                 return new UserDAOimpl();
+            }
+            case PASSENGER -> {
+                return new PassengerDAOimpl();
             }
             default -> {
                 return null;

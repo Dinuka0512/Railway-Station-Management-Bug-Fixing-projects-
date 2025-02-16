@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class mainviewContoller {
+public class MainviewContoller {
     @FXML
     private Button btnLogout;
 
@@ -76,6 +76,17 @@ public class mainviewContoller {
             stage.setScene(new Scene(pane));
             stage.setTitle("Register User");
             stage.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void managePassenger(ActionEvent event) {
+        try{
+            content.getChildren().clear();
+            AnchorPane load = FXMLLoader.load(getClass().getResource("/view/ManagePassenger.fxml"));
+            content.getChildren().add(load);
         }catch (Exception e){
             e.printStackTrace();
         }

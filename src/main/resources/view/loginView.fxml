@@ -17,14 +17,20 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="content" prefHeight="543.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.gdse.railway_management.railway_management_system.controller.loginController">
+<AnchorPane fx:id="content" prefHeight="543.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.gdse.railway_management.railway_management_system.controller.LoginController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="543.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="840.0" />
-      <ImageView fitHeight="543.0" fitWidth="840.0" opacity="0.48">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="543.0" layoutY="-4.0" opacity="0.96" stroke="BLACK" strokeType="INSIDE" width="840.0" />
+      <ImageView fitHeight="543.0" fitWidth="840.0" opacity="0.6">
          <image>
             <Image url="@../images/BGLogin.jpg" />
          </image>
       </ImageView>
+      <AnchorPane layoutX="220.0" layoutY="125.0" opacity="0.45" prefHeight="293.0" prefWidth="400.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" />
+      <TextField fx:id="txtEmail" layoutX="289.0" layoutY="196.0" prefHeight="26.0" prefWidth="262.0" promptText="Email">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
       <PasswordField fx:id="password" layoutX="289.0" layoutY="257.0" prefHeight="27.0" prefWidth="262.0" promptText="password">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -35,24 +41,14 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="300.0" layoutY="447.0" prefHeight="18.0" prefWidth="183.0" text="don't have an account ?" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="43.0" prefHeight="30.0" prefWidth="178.0" text="Welcome To " textFill="WHITE">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="Times New Roman" size="26.0" />
          </font>
       </Label>
-      <Hyperlink alignment="CENTER" contentDisplay="CENTER" layoutX="484.0" layoutY="444.0" onAction="#navigateToRegister" prefHeight="28.0" prefWidth="81.0" style="-fx-background-color: #2c66bf;" text="Register" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="73.0" prefHeight="41.0" prefWidth="691.0" text="JourneyHub Railway Management System" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Hyperlink>
-      <TextField fx:id="txtEmail" layoutX="289.0" layoutY="196.0" prefHeight="26.0" prefWidth="262.0" promptText="Email">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </TextField>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="113.0" layoutY="44.0" prefHeight="30.0" prefWidth="639.0" text="Welcome To JourneyHub Railway Management System" textFill="WHITE">
-         <font>
-            <Font name="Times New Roman Bold" size="26.0" />
+            <Font name="Times New Roman Bold" size="37.0" />
          </font>
       </Label>
    </children>
