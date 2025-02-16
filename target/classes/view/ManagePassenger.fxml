@@ -46,7 +46,7 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <TableView fx:id="passengerTable" layoutX="31.0" layoutY="234.0" prefHeight="283.0" prefWidth="638.0">
+      <TableView fx:id="passengerTable" layoutX="31.0" layoutY="234.0" onMouseClicked="#loadTableData" prefHeight="283.0" prefWidth="638.0">
         <columns>
           <TableColumn fx:id="columnId" prefWidth="150.0" text="passenger_Id" />
           <TableColumn fx:id="columnName" prefWidth="149.0" text="Name" />

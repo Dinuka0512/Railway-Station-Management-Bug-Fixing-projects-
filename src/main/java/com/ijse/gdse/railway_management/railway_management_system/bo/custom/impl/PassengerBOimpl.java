@@ -29,5 +29,20 @@ public class PassengerBOimpl implements PassengerBO {
         return dtos;
     }
 
+    @Override
+    public String genarateId() throws SQLException, ClassNotFoundException {
+        return passengerDAO.generateNewId();
+    }
+
+    @Override
+    public boolean deletePassenger(String id) throws SQLException, ClassNotFoundException {
+        return passengerDAO.delete(id);
+    }
+
+    @Override
+    public boolean save(PassengerDto passengerDto) throws SQLException, ClassNotFoundException {
+        return passengerDAO.save(new Passenger(passengerDto.getPassenger_Id(), passengerDto.getName(), passengerDto.getEmail(), passengerDto.getContact()));
+    }
+
 
 }

@@ -8,4 +8,7 @@ import java.util.ArrayList;
 
 public interface PassengerBO extends SuperBo {
     ArrayList<PassengerDto> getAllDetails() throws SQLException, ClassNotFoundException;
+    String genarateId()throws SQLException, ClassNotFoundException;
+    boolean deletePassenger(String id)throws SQLException, ClassNotFoundException;
+    boolean save(PassengerDto passengerDto) throws SQLException, ClassNotFoundException;
 }
