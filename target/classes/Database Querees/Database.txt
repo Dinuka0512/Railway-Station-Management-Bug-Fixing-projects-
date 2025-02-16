@@ -11,7 +11,8 @@ CREATE TABLE user (
   u_id VARCHAR(10) PRIMARY KEY,
   name VARCHAR(30),
   contact_no VARCHAR(15),
-  gmail VARCHAR(50)
+  gmail VARCHAR(50),
+  password VARCHAR(255) NOT NULL;
 );
 
 CREATE TABLE booking (
@@ -35,12 +36,20 @@ CREATE TABLE passenger (
   FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+
+create table payment_Type(
+    pt_Id varchar (255) primary key,
+    type varchar (255)
+);
+
+
 CREATE TABLE payment (
   p_id VARCHAR(10) PRIMARY KEY,
   amount DECIMAL(10,2),
   booking_id VARCHAR(10) NOT NULL,
   date DATE,
-  method VARCHAR(10),
+  pt_Id varchar(255),
+  FOREIGN KEY (pt_Id) REFERENCES payment_Type(pt_Id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (booking_id) REFERENCES booking(b_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 

@@ -45,7 +45,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Hyperlink>
-      <TextField fx:id="usernameTxt" layoutX="289.0" layoutY="196.0" prefHeight="26.0" prefWidth="262.0" promptText="Username">
+      <TextField fx:id="txtEmail" layoutX="289.0" layoutY="196.0" prefHeight="26.0" prefWidth="262.0" promptText="Email">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

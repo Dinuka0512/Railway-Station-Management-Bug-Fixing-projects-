@@ -117,7 +117,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.ijse.gdse.railway_management.railway_management_system/com.ijse.gdse.railway_management.railway_management_system.AppInitializer
+                                com.ijse.gdse.railway_management.railway_management_system/com.ijse.gdse.railway_management.railway_management_system.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

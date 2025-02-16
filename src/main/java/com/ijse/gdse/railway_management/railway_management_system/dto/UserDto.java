@@ -9,6 +9,7 @@ import lombok.*;
 public class UserDto {
     private  String u_id;
     private  String name;
-    private int contact_no;
+    private String contact_no;
     private String gmail;
+    private String password;
 }

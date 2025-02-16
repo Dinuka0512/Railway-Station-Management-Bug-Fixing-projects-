@@ -1,4 +1,10 @@
 package com.ijse.gdse.railway_management.railway_management_system.bo.custom;
 
-public interface UserBo {
+import com.ijse.gdse.railway_management.railway_management_system.bo.SuperBo;
+import com.ijse.gdse.railway_management.railway_management_system.dto.UserDto;
+
+import java.sql.SQLException;
+
+public interface UserBo extends SuperBo {
+    UserDto getUserDetails(String email) throws SQLException, ClassNotFoundException;
 }
